@@ -19,7 +19,7 @@ export default function VideoPlayer() {
   };
 
   return (
-    <div className="flex flex-col flex-1 w-12/12 object-contain h-screen">
+    <div className="">
       {
         <ReactPlayer
           key={currentVideo.url}
@@ -27,18 +27,19 @@ export default function VideoPlayer() {
           src={currentVideo.url}
           playing={playing}
           controls={false}
-          width="100%"
-          height="100%"
+          width="100vw"
+          height="90vh"
           onEnded={playNextVideo}
         />
       }
-
-      <button
-        onClick={() => setPlaying((prev) => !prev)}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        {playing ? "Pause" : "Play"}
-      </button>
+      <nav className="h-[10vh]">
+        <button
+          onClick={() => setPlaying((prev) => !prev)}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          {playing ? "Pause" : "Play"}
+        </button>
+      </nav>
     </div>
   );
 }
