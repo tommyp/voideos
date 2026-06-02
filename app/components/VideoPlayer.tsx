@@ -10,7 +10,7 @@ export default function VideoPlayer() {
 
   const firstVideo = listVideos()[0];
 
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [currentVideo, setCurrentVideo] = useState<Video>(firstVideo);
 
   const playNextVideo = () => {
